@@ -2,7 +2,7 @@ const controls = Array.from(document.querySelectorAll('.book__control'));
 const menu = document.querySelector(".book__controls")
 const content = document.getElementById('book')
 
- const fontOptions = (e) => {
+const fontOptions = (e) => {
     controls.forEach(options => Array.from(options.children).forEach(option => 
         {option.classList.remove('font-size_active');
         if (option == e.target){e.preventDefault();
