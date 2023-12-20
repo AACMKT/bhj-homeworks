@@ -1,0 +1,70 @@
+.header {
+  margin-bottom: 20px;
+}
+
+.has-tooltip {
+  color: #000;
+  background: yellow;
+}
+
+.has-tooltip:hover {
+  color: red;
+}
+
+.tooltip {
+  position: fixed;
+  display: none;
+  background: black;
+  padding: 5px;
+  border-radius: 5px;
+  color: #fff;
+}
+
+.tooltip_active {
+  display: block;
+}
+
+
+.options-bar {
+  background: rgb(63, 63, 63);
+  padding: 10px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: whitesmoke;
+  font-size: 16px;
+  margin-bottom: 40px;
+}
+
+.options-bar__control {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tips-position {
+  text-align: center;
+  text-decoration: none;
+  color: whitesmoke;
+  display: inline-block;
+  height: 25px;
+  padding: 2px 6px;
+  font-size: 16px;
+  line-height: 16px;
+  padding: 1px 6px;
+  margin: 0 6px;
+  box-sizing: border-box;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.bar-option_active {
+
+  border-radius: 6%;
+  outline: solid 2px whitesmoke;
+  box-shadow: 0 0 5px 5px whitesmoke;
+  background-color: rgba(245, 245, 245, .2)
+}
