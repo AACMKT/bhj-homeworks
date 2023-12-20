@@ -3,9 +3,7 @@ const taskInput = document.getElementById("task__input");
 const button = document.getElementById("tasks__add");
 const form = document.getElementById("tasks__form");
 
-
 let strgKey;
-
 
 document.addEventListener('DOMContentLoaded', () => { if (localStorage.length > 0) {
     console.log(localStorage)
