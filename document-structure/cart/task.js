@@ -3,9 +3,9 @@ const buttons = Array.from(document.querySelectorAll('.product__add'));
 const qty = Array.from(document.querySelectorAll('.product__quantity-control'));
 const clearCart = document.querySelector(".cart__clear");
 
-document.addEventListener('DOMContentLoaded', async ()=> {
+document.addEventListener('DOMContentLoaded', ()=> {
     if (localStorage.length > 0) {
-        const toObjDTS = await JSON.parse(localStorage.getItem("data"));
+        const toObjDTS = JSON.parse(localStorage.getItem("data"));
         for (let i = 0; i < toObjDTS.length; i++){
             let {product, productImg, productCount} = buildTagsSetup();
             product.dataset.id = toObjDTS[i].id;
