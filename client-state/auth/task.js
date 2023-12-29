@@ -30,7 +30,6 @@ async function auth(e) {
             console.error('Promise rejected');
             return {'success': `failed_internal error`}
       }
-      
 };
 
 async function authControl (e) {
@@ -69,7 +68,6 @@ async function authControl (e) {
         resetForm()
     }
     }
-
 };
 
 function loggedIn (user) {
@@ -87,7 +85,7 @@ function checkAuthStatus () {
     else {
         document.querySelector('.signin').classList.add('signin_active');
     }
-}
+};
 
 function resetForm () {
     logInBtn.textContent = "Войти";
