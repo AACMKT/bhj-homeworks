@@ -9,7 +9,7 @@ function toStorage () {
 function clearContent () {
     textBox.value = "";
     localStorage.removeItem('data')
-}
+};
 
 document.addEventListener('DOMContentLoaded', () => {textBox.value = localStorage.getItem('data')});
 textBox.oninput = toStorage;
