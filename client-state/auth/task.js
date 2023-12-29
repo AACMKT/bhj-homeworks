@@ -59,10 +59,8 @@ async function authControl (e) {
         }
         else if (status) {
             let user = response.user_id
-            msg.innerHTML = `Добро пожаловать, пользователь ${user}!`;
-            document.querySelector('.signin').classList.remove('signin_active');
-            msg.classList.add('welcome_active');
-            logoutField.classList.add('reset_active')
+            localStorage.setItem('user', user);
+            loggedIn (user);
         }
     }
     
@@ -72,6 +70,23 @@ async function authControl (e) {
     }
     }
 
+};
+
+function loggedIn (user) {
+    msg.innerHTML = `Добро пожаловать, пользователь ${user}!`;
+    document.querySelector('.signin').classList.remove('signin_active');
+    msg.classList.add('welcome_active');
+    logoutField.classList.add('reset_active')
+};
+
+function checkAuthStatus () {
+    if (localStorage.getItem('user')) {
+        let user = localStorage.getItem('user');
+        loggedIn (user)
+    }
+    else {
+        document.querySelector('.signin').classList.add('signin_active');
+    }
 }
 
 function resetForm () {
@@ -80,15 +95,17 @@ function resetForm () {
     formMsg.innerHTML = '';
     formMsg.style.display = 'none';
     form.reset();
-    logoutField.classList.remove('reset_active')
-}
+    logoutField.classList.remove('reset_active');
+};
 
 function logout () {
     resetForm();
     msg.classList.remove('welcome_active');
     msg.innerHTML = '';
     document.querySelector('.signin').classList.add('signin_active');
-}
+    localStorage.removeItem('user');
+};
 
+document.addEventListener('DOMContentLoaded', checkAuthStatus)
 form.addEventListener('submit', (e) => authControl(e));
 logOffBtn.addEventListener('click', logout)
